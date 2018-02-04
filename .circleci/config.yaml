@@ -15,7 +15,10 @@ jobs:
       # - image: circleci/mongo:3.4.4
 
     working_directory: ~/repo
-
+    
+    branches: 
+      only:
+        - master
     steps:
       - checkout
         - restore_cache:
@@ -36,3 +39,4 @@ jobs:
         - run:
             name: Bump version
             command: /bin/bash /home/circleci/repo/bump-version.sh
+            
