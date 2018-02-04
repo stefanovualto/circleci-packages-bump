@@ -3,6 +3,9 @@
   "version": "4.1.0-3",
   "description": "Test CI with version bumping",
   "main": "index.js",
+  "scripts": {
+    "test": "echo \"No test specified\" && exit 0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/stefanovualto/circleci-packages-bump.git"
