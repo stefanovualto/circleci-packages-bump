@@ -34,5 +34,5 @@ jobs:
             name: Setup git permissions
             command: git config --global user.email "vuplay@vualto.com" && git config --global user.name "vuplay" && git config --global push.default simple
         - run:
-            name: Bump patch version
-            command: npm version patch -m "updated patch version [ci skip]" && git push
+            name: Bump version
+            command: /bin/bash /home/circleci/repo/bump-version.sh
