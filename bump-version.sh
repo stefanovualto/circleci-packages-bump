@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PACKAGE_GIT_VERSION=$(curl -s https://raw.githubusercontent.com/[user]/[repo]/master/package.json \
+PACKAGE_GIT_VERSION=$(curl -s https://raw.githubusercontent.com/stefanovualto/circleci-packages-bump/master/package.json \
   | grep version \
   | head -1 \
   | awk -F: '{ print $2 }' \
