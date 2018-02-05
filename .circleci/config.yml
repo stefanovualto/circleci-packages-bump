@@ -34,9 +34,6 @@ jobs:
               - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
       - run:
-          name: Setup git permissions
-          command: git config --global user.email "vuplay@vualto.com" && git config --global user.name "vuplay" && git config --global push.default simple
-      - run:
           name: Bump version
           command: /bin/bash /home/circleci/repo/bump-version.sh
           
