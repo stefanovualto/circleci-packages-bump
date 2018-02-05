@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/stefanovualto/circleci-packages-bump/issues"
   },
-  "homepage": "https://github.com/stefanovualto/circleci-packages-bump#readme"
+  "homepage": "https://github.com/stefanovualto/circleci-packages-bump#readme",
+  "dependencies": {
+    "hello-world-npm": "^1.1.1"
+  }
 }
