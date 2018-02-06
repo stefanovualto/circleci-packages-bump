@@ -26,7 +26,11 @@ git checkout master
   echo "PACKAGE_VERSION=${PACKAGE_VERSION}" 
 
 if [ "$PREVIOUS_PACKAGE_VERSION" == "$PACKAGE_VERSION" ]
+  npm version patch -m "updated patch version [ci skip]" && git push
+  echo "Version bumped from the old one"
+then
+elif [ "$PREVIOUS_PACKAGE_VERSION" == "" ]
 then
   npm version patch -m "updated patch version [ci skip]" && git push
-  echo "Version bumped"
+  echo "Version bumped wasn't able to find the previous one"
 fi
