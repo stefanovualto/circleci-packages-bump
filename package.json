@@ -1,6 +1,6 @@
 {
   "name": "circleci-packages-bump",
-  "version": "4.3.1",
+  "version": "4.3.2",
   "description": "Test CI with version bumping",
   "main": "index.js",
   "scripts": {
