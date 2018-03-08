@@ -45,6 +45,6 @@ then
   npm version patch -m "circleci bump patch version to $BUMPED_PACKAGE_VERSION [ci skip]" && git push
   echo "Version bumped wasn't able to find the previous one"
 else
-git commit -m "release of major/minor version $PACKAGE_VERSION [ci skip]" && git push
+  git commit --allow-empty -m "release of major/minor version $PACKAGE_VERSION [ci skip]" && git push
   echo "Version wasn't bumped due to a modification of the major or minor version"
 fi
