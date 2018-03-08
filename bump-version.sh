@@ -25,14 +25,26 @@ git checkout master
 
   echo "PACKAGE_VERSION=${PACKAGE_VERSION}" 
 
+  BUMPED_PACKAGE_VERSION=$(cat package.json \
+  | grep version \
+  | head -1 \
+  | awk -F: '{ print $2 }' \
+  | sed 's/[",]//g' \
+  | awk -F '.' '{ print $1,$2,$3+1 }' \
+  | sed 's/^ //' \
+  | sed 's/ /./g')
+
+  echo "BUMPED_PACKAGE_VERSION=${BUMPED_PACKAGE_VERSION}" 
+
 if [ "$PREVIOUS_PACKAGE_VERSION" == "$PACKAGE_VERSION" ]
 then
-  npm version patch -m "bump patch version to $PACKAGE_VERSION [ci skip]" && git push
+  npm version patch -m "circleci bump patch version to $BUMPED_PACKAGE_VERSION [ci skip]" && git push
   echo "Version bumped from the old one"
 elif [ "$PREVIOUS_PACKAGE_VERSION" == "" ]
 then
-  npm version patch -m "bump patch version to $PACKAGE_VERSION [ci skip]" && git push
+  npm version patch -m "circleci bump patch version to $BUMPED_PACKAGE_VERSION [ci skip]" && git push
   echo "Version bumped wasn't able to find the previous one"
 else
+git commit -m "release of major/minor version $PACKAGE_VERSION [ci skip]" && git push
   echo "Version wasn't bumped due to a modification of the major or minor version"
 fi
