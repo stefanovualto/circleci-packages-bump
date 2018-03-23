@@ -53,5 +53,6 @@ else
 fi
 git tag -a v$TAG_VERSION -m "CircleCi has taged this version $TAG_VERSION"
 git push --tags
+git push
 
-echo "V7"
+echo "V8"
