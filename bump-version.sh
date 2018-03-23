@@ -51,7 +51,7 @@ else
     echo "Version wasn't bumped due to a modification of the major or minor version"
     TAG_VERSION=PACKAGE_VERSION
 fi
-git tag -a v${TAG_VERSION} -m "CircleCi has taged this version $TAG_VERSION"
+git tag -a v$TAG_VERSION -m "CircleCi has taged this version $TAG_VERSION"
 git push
 
 echo "V3"
