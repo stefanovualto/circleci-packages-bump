@@ -54,4 +54,4 @@ fi
 git tag -a v$TAG_VERSION -m "CircleCi has taged this version $TAG_VERSION"
 git push
 
-echo "V3"
+echo "V4"
