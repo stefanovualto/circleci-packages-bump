@@ -52,6 +52,6 @@ else
     TAG_VERSION=$PACKAGE_VERSION
 fi
 git tag -a v$TAG_VERSION -m "CircleCi has taged this version $TAG_VERSION"
-git push
+git push origin --tags
 
-echo "V5"
+echo "V6"
